@@ -70,8 +70,71 @@ const scrollHandler = (e) => {
   }
 };
 
+const mobileScrollHandler = (e) => {
+  e.preventDefault(); // Prevent default touch behavior
+
+  const fragmentIdentifier = window.location.hash.substring(1).length
+    ? window.location.hash.substring(1)
+    : "home";
+
+  const currentIndex =
+    ids.indexOf(fragmentIdentifier) > 0 ? ids.indexOf(fragmentIdentifier) : 0;
+
+  // active section
+  let activeId = "home";
+
+  let closestSection = null;
+  let closestDistance = Infinity;
+
+  sections.forEach((section) => {
+    const distance = Math.abs(
+      section.getBoundingClientRect().top - window.innerHeight / 2
+    );
+
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      closestSection = section;
+    }
+  });
+
+  if (closestSection) {
+    activeId = closestSection.id;
+  }
+
+  // main action
+
+  if (isScroll) {
+    const touchY = e.touches[0].clientY;
+    const deltaY = touchY - lastTouchY;
+    lastTouchY = touchY;
+
+    if (deltaY > 0) {
+      scrollCount = scrollCount + 1;
+
+      if (scrollCount > 1) {
+        if (currentIndex < ids.length - 1 && activeId === fragmentIdentifier) {
+          scrollCount = 0;
+          window.location.href = "#" + ids[currentIndex + 1];
+          isScroll = false;
+        }
+      }
+    } else if (deltaY < 0) {
+      scrollCount = scrollCount + 1;
+      if (scrollCount > 1) {
+        if (currentIndex > 0 && activeId === fragmentIdentifier) {
+          scrollCount = 0;
+          window.location.href = "#" + ids[currentIndex - 1];
+          isScroll = false;
+        }
+      }
+    }
+  }
+};
+
+// Assuming you have an event listener for 'touchmove'
+
 document.addEventListener("wheel", (e) => scrollHandler(e));
-document.addEventListener("touchmove", (e) => scrollHandler(e));
+document.addEventListener("touchmove", (e) => mobileScrollHandler(e));
 
 // active menu
 const menus = document.querySelectorAll(".nav-menu>li");
