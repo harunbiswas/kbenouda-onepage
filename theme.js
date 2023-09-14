@@ -111,7 +111,7 @@ const mobileScrollHandler = (e) => {
     const deltaY = touchY - lastTouchY;
     lastTouchY = touchY;
 
-    if (deltaY > 0) {
+    if (deltaY < 0) {
       scrollCount = scrollCount + 1;
 
       if (scrollCount > 1) {
@@ -121,7 +121,7 @@ const mobileScrollHandler = (e) => {
           isScroll = false;
         }
       }
-    } else if (deltaY < 0) {
+    } else if (deltaY > 0) {
       scrollCount = scrollCount + 1;
       if (scrollCount > 1) {
         if (currentIndex > 0 && activeId === fragmentIdentifier) {
