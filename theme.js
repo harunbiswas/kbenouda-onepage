@@ -71,8 +71,6 @@ const scrollHandler = (e) => {
 };
 
 const mobileScrollHandler = (e) => {
-  e.preventDefault(); // Prevent default touch behavior
-
   const fragmentIdentifier = window.location.hash.substring(1).length
     ? window.location.hash.substring(1)
     : "home";
