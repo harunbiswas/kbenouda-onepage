@@ -15,6 +15,9 @@ setInterval(() => {
   isScroll = true;
 }, 1000);
 
+let closestDistance = Infinity;
+console.log(closestDistance);
+
 const scrollHandler = (e) => {
   const fragmentIdentifier = window.location.hash.substring(1).length
     ? window.location.hash.substring(1)
@@ -69,6 +72,8 @@ const scrollHandler = (e) => {
     }
   }
 };
+
+let lastTouchY = 0;
 
 const mobileScrollHandler = (e) => {
   const fragmentIdentifier = window.location.hash.substring(1).length
