@@ -692,6 +692,10 @@ ul {
     opacity: 0.95;
   }
 
+  @media screen and (max-width: 500px) {
+    padding: 80px 0 20px;
+  }
+
   &::before {
     background-image: url("https://cdn.pixabay.com/photo/2023/01/07/11/54/quarry-7703096_640.jpg");
     background-repeat: no-repeat;
@@ -748,6 +752,18 @@ ul {
     @media screen and (max-width: 768px) {
       gap: 20px;
     }
+
+    @media screen and (max-width: 500px) {
+      height: unset;
+
+      .sub-title {
+        padding-bottom: 40px;
+
+        &::after {
+          bottom: 20px;
+        }
+      }
+    }
   }
 
   &.animation {
@@ -793,6 +809,10 @@ ul {
     transform: scale(1);
   }
 
+  @media screen and (max-width: 500px) {
+    padding: 80px 0 0;
+  }
+
   & > .container {
     display: flex;
     align-items: center;
@@ -802,7 +822,9 @@ ul {
     @media screen and (max-width: 500px) {
       flex-direction: column;
       gap: 28px;
+      overflow: hidden;
       overflow-y: scroll;
+      padding-bottom: 10px;
     }
   }
 
@@ -842,6 +864,13 @@ ul {
     align-items: center;
     justify-content: start;
     height: auto;
+
+    @media screen and (max-width: 500px) {
+      padding-left: 0px;
+      border-left: none;
+      column-gap: 50px;
+      width: 100%;
+    }
 
     &-item {
       display: flex;
@@ -1166,6 +1195,13 @@ ul {
         @media screen and (max-width: 500px) {
           width: 370px;
         }
+        @media screen and (max-width: 400px) {
+          width: 330px;
+        }
+
+        @media screen and (max-width: 350px) {
+          width: 280px;
+        }
 
         .buttons {
           display: flex;
@@ -1207,6 +1243,13 @@ ul {
           @media screen and (max-width: 500px) {
             width: 370px;
             margin-bottom: 200px;
+          }
+
+          @media screen and (max-width: 400px) {
+            width: 330px;
+          }
+          @media screen and (max-width: 350px) {
+            width: 280px;
           }
 
           &:hover {
@@ -1279,7 +1322,6 @@ ul {
 // contact
 .contact {
   padding: 120px 0;
-
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -1306,6 +1348,10 @@ ul {
     transform: scale(1.015);
   }
 
+  @media screen and (max-width: 500px) {
+    padding: 50px 0 10px;
+  }
+
   & > .container {
     display: flex;
     gap: 60px;
@@ -1321,7 +1367,7 @@ ul {
 
       @media screen and (max-width: 500px) {
         flex-direction: column;
-
+        gap: 20px;
         margin-top: 10px;
         margin-bottom: 20px;
       }

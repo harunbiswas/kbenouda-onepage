@@ -481,6 +481,9 @@ ul {
     left: 0;
     z-index: -1;
     opacity: 0.95; }
+  @media screen and (max-width: 500px) {
+    .about {
+      padding: 80px 0 20px; } }
   .about::before {
     background-image: url("https://cdn.pixabay.com/photo/2023/01/07/11/54/quarry-7703096_640.jpg");
     background-repeat: no-repeat;
@@ -521,6 +524,13 @@ ul {
     @media screen and (max-width: 768px) {
       .about-right {
         gap: 20px; } }
+    @media screen and (max-width: 500px) {
+      .about-right {
+        height: unset; }
+        .about-right .sub-title {
+          padding-bottom: 40px; }
+          .about-right .sub-title::after {
+            bottom: 20px; } }
   .about.animation .text {
     opacity: 1;
     transition: 2s;
@@ -551,6 +561,9 @@ ul {
     background-size: cover;
     background-position: center;
     transform: scale(1); }
+  @media screen and (max-width: 500px) {
+    .service {
+      padding: 80px 0 0; } }
   .service > .container {
     display: flex;
     align-items: center;
@@ -560,7 +573,9 @@ ul {
       .service > .container {
         flex-direction: column;
         gap: 28px;
-        overflow-y: scroll; } }
+        overflow: hidden;
+        overflow-y: scroll;
+        padding-bottom: 10px; } }
   .service-left {
     max-width: 500px; }
     .service-left .left-bar {
@@ -587,6 +602,12 @@ ul {
     align-items: center;
     justify-content: start;
     height: auto; }
+    @media screen and (max-width: 500px) {
+      .service-right {
+        padding-left: 0px;
+        border-left: none;
+        column-gap: 50px;
+        width: 100%; } }
     .service-right-item {
       display: flex;
       flex-direction: column;
@@ -815,6 +836,12 @@ ul {
       @media screen and (max-width: 500px) {
         .project-right .images-wrp {
           width: 370px; } }
+      @media screen and (max-width: 400px) {
+        .project-right .images-wrp {
+          width: 330px; } }
+      @media screen and (max-width: 350px) {
+        .project-right .images-wrp {
+          width: 280px; } }
       .project-right .images-wrp .buttons {
         display: flex;
         flex-direction: column;
@@ -843,6 +870,12 @@ ul {
           .project-right .images > img.active {
             width: 370px;
             margin-bottom: 200px; } }
+        @media screen and (max-width: 400px) {
+          .project-right .images > img.active {
+            width: 330px; } }
+        @media screen and (max-width: 350px) {
+          .project-right .images > img.active {
+            width: 280px; } }
         .project-right .images > img.active:hover {
           filter: grayscale(0%); }
   .project-wrp {
@@ -906,6 +939,9 @@ ul {
     background-size: cover;
     background-position: center;
     transform: scale(1.015); }
+  @media screen and (max-width: 500px) {
+    .contact {
+      padding: 50px 0 10px; } }
   .contact > .container {
     display: flex;
     gap: 60px; }
@@ -919,6 +955,7 @@ ul {
       @media screen and (max-width: 500px) {
         .contact-left .content {
           flex-direction: column;
+          gap: 20px;
           margin-top: 10px;
           margin-bottom: 20px; } }
       .contact-left .content .item {
