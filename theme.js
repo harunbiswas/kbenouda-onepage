@@ -15,7 +15,7 @@ setInterval(() => {
   isScroll = true;
 }, 1000);
 
-document.addEventListener("wheel", (e) => {
+const scrollHandler = (e) => {
   const fragmentIdentifier = window.location.hash.substring(1).length
     ? window.location.hash.substring(1)
     : "home";
@@ -68,7 +68,10 @@ document.addEventListener("wheel", (e) => {
       }
     }
   }
-});
+};
+
+document.addEventListener("wheel", (e) => scrollHandler(e));
+document.addEventListener("touchmove", (e) => scrollHandler(e));
 
 // active menu
 const menus = document.querySelectorAll(".nav-menu>li");
