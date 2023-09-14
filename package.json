@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "dev": "node-sass assets/sass/main.scss style.css -w"
+  },
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  },
+  "name": "onePage",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
+}
